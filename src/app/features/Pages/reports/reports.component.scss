@@ -1,0 +1,113 @@
+.container-fluid{
+background-color: #e5ecf2;
+height: 100%;
+width: 100%;
+
+} 
+
+.mini-details{
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-around;
+margin: 0 -32rem;
+background-color: transparent;
+}
+
+.mini-details h4{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+      font-size: .9em;
+      margin-left: 3rem;
+
+}
+
+.mini-details p{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: .9rem;
+    margin-right: 3rem;
+}
+
+.container{
+background-color: #fff;
+border-radius: 4px;
+
+
+}
+
+
+.recordsearch{
+   display: flex;
+ flex-direction: row; 
+
+}
+
+.selectrecord{
+ margin-top: 1rem;
+margin-bottom: 1rem;
+ width: 17.5%;
+ 
+}
+
+.selectrecord2{
+ margin-top: 1rem;
+margin-bottom: 1rem;
+ width: 17.5%;
+ margin-left: .6rem;
+ color: #6c757d;
+}
+
+
+// .form-select{
+//     color: #6c757d;
+// }
+
+.form-select2{ 
+color:  #6c757d;
+ border-radius: 4px;
+}
+
+.form-option{
+    color: #6c757d;
+}
+
+
+
+.btn-droplist{
+    padding-left: .8rem;
+    padding-bottom: 1.5rem;
+    padding-top: .25rem;
+    font-size: small;
+    margin-top: 1rem;
+    margin-left: 42rem;
+     border-radius: 4px;
+    
+}
+
+
+table {
+  width: 100%;
+  background-color: #fff;
+  margin-top: -1rem;
+}
+
+
+.pagination-nav{
+display: flex;
+flex-direction: row-reverse;
+margin-top: 2rem;
+margin-right: .2rem;
+}
+.page-item{
+margin: 0 4px;
+border-radius: 50%;
+}
+
+.tableheading{
+  color:#6c757d;
+  font-weight: 500;
+}
+
+
+

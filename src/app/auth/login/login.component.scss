@@ -1,0 +1,56 @@
+/* Wrapper */
+.login-wrapper {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Top Background V Shape */
+.top-container {
+  width: 100vw;
+  height: 400px;
+  background: linear-gradient(to right, rgba(76, 126, 227, 0.9), rgba(102, 145, 231, 0.9)),
+              url('https://pytosoft.com/supplierpro/auth-one-bg.9284af3a86f94b07.jpg') center/cover no-repeat;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Centered Content */
+.sub-top-container {
+  color: white;
+  margin-top: -8rem;
+}
+.sub-top-container h3 {
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+.sub-top-container p {
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 0;
+  font-size: 16px;
+  max-width: 700px;
+//   margin-inline: auto;
+    margin-bottom: 6px;
+
+}
+
+/* Form Positioning */
+.form-container {
+  margin-top: -237px;
+  padding: 20px;
+}
+
+/* Button Styling */
+.btn-success {
+  background-color: #13C56B;
+  color: white;
+  border: none;
+}
+.btn-success:hover {
+  background-color: #0ca85e;
+}

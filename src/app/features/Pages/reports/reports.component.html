@@ -1,0 +1,168 @@
+<app-header></app-header>
+
+<div class="container-fluid">
+      <div class="mini-details">
+        <h4>INVENTORY REGISTER</h4>
+        <P>Inventory Register</P>
+    </div>
+ 
+    
+    
+<div class="container">
+
+<div class="recordsearch">
+
+    <div class="selectrecord">
+
+<select class="form-select form-select-sm" aria-label=".form-select-sm example">
+  <option selected>Choose Type</option>
+  <option value="1">Out Of Stock</option>
+  <option value="2">In Stock</option>
+
+</select>
+</div>
+
+   <div class="selectrecord2">
+
+<select class="form-select form-select2 form-select-sm" aria-label=".form-select-sm example">
+  <option class="form-option" selected>Select a Product</option>
+  <option class="form-option" value="1">Coca Cola</option>
+  <option class="form-option" value="2">Pepsi</option>
+  <option class="form-option" value="3">Nestle</option>
+  <option class="form-option" value="3">Uniqlo</option>
+</select>
+</div>
+
+
+
+
+</div>
+
+<hr style="border-top: 1px dashed ;">
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!-- Checkbox Column -->
+  <ng-container matColumnDef="select">
+    <th mat-header-cell *matHeaderCellDef>
+      <mat-checkbox (change)="$event ? toggleAllRows() : null"
+                    [checked]="selection.hasValue() && isAllSelected()"
+                    [indeterminate]="selection.hasValue() && !isAllSelected()"
+                    [aria-label]="checkboxLabel()">
+      </mat-checkbox>
+    </th>
+    <td mat-cell *matCellDef="let row">
+      <mat-checkbox (click)="$event.stopPropagation()"
+                    (change)="$event ? selection.toggle(row) : null"
+                    [checked]="selection.isSelected(row)"
+                    [aria-label]="checkboxLabel(row)">
+      </mat-checkbox>
+    </td>
+  </ng-container>
+
+  <!-- Product Column -->
+  <ng-container matColumnDef="product">
+    <th class="tableheading" mat-header-cell *matHeaderCellDef>
+      PRODUCT <i class="fa-solid fa-sort fa-2xs" style="margin-left: 4px"></i>
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.product}} </td>
+  </ng-container>
+
+  <!-- Expiry Column -->
+  <ng-container matColumnDef="expiry">
+    <th class="tableheading" mat-header-cell *matHeaderCellDef>
+      EXPIRY <i class="fa-solid fa-sort fa-2xs" style="margin-left: 4px"></i>
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.expiry}} </td>
+  </ng-container>
+
+  <!-- StockQty Column -->
+  <ng-container matColumnDef="stockQty">
+    <th class="tableheading" mat-header-cell *matHeaderCellDef>
+      STOCKQTY <i class="fa-solid fa-sort fa-2xs" style="margin-left: 4px"></i>
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.stockQty}} </td>
+  </ng-container>
+
+  <!-- SoldQty Column -->
+  <ng-container matColumnDef="soldQty">
+    <th class="tableheading" mat-header-cell *matHeaderCellDef>
+      SOLDQTY <i class="fa-solid fa-sort fa-2xs" style="margin-left: 4px"></i>
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.soldQty}} </td>
+  </ng-container>
+
+  <!-- BalQty Column -->
+  <ng-container matColumnDef="balQty">
+    <th class="tableheading" mat-header-cell *matHeaderCellDef>
+      BALQTY <i class="fa-solid fa-sort fa-2xs" style="margin-left: 4px"></i>
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.balQty}} </td>
+  </ng-container>
+
+  <!-- Allocated Column -->
+  <ng-container matColumnDef="allocated">
+    <th class="tableheading" mat-header-cell *matHeaderCellDef>
+      ALLOCATED <i class="fa-solid fa-sort fa-2xs" style="margin-left: 4px"></i>
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.allocated}} </td>
+  </ng-container>
+
+  <!-- PO Number Column -->
+  <ng-container matColumnDef="poNumber">
+    <th class="tableheading" mat-header-cell *matHeaderCellDef>
+      PO# <i class="fa-solid fa-sort fa-2xs" style="margin-left: 4px"></i>
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.poNumber}} </td>
+  </ng-container>
+
+  <!-- PO Ref Column -->
+  <ng-container matColumnDef="poRef">
+    <th class="tableheading" mat-header-cell *matHeaderCellDef>
+      PO REF <i class="fa-solid fa-sort fa-2xs" style="margin-left: 4px"></i>
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.poRef}} </td>
+  </ng-container>
+
+  <!-- Action Column -->
+  <ng-container matColumnDef="action">
+    <th class="tableheading" mat-header-cell *matHeaderCellDef> ACTION </th>
+    <td mat-cell *matCellDef="let element">
+      <i class="fa-solid fa-eye fa-xs" style="color: #343a40ae; margin-right: 8px;" title="View"></i>
+      <i class="fa-solid fa-pen fa-xs" style="color: #343a40ae; margin-right: 8px;" title="Edit"></i>
+      <i class="fa-solid fa-trash fa-xs" style="color: #343a40ae;" title="Delete"></i>
+    </td>
+  </ng-container>
+
+  <!-- Table Rows -->
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)">
+  </tr>
+</table>
+
+
+<nav class="pagination-nav" aria-label="...">
+  <ul class="pagination">
+    <li class="page-item disabled">
+      <a class="page-link"  style=" border-radius: 4px;" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+    </li> 
+    <li class="page-item">
+      <a class="page-link" style=" border-radius: 4px; color: #6691E7;" href="#">1</a></li>
+
+    <li class="page-item"  aria-current="page">
+      <a class="page-link" style="  border-radius: 4px; background-color:#6691E7; color: #fff;" href="#">2</a>
+    </li>
+
+    <li class="page-item">
+      <a class="page-link" style=" border-radius: 4px; color: #6691E7;" href="#">Next</a>
+    </li>
+  </ul>
+</nav>
+
+
+</div>
+</div>
+
+
+
+

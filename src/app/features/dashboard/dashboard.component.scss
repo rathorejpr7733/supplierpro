@@ -1,0 +1,51 @@
+.container-fluid{
+background-color: #e5ecf2;
+height: 100%;
+width: 100%;
+
+} 
+
+.mini-details{
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-around;
+margin: 0 -31rem;
+background-color: transparent;
+}
+
+.mini-details h4{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+      font-size: 1.2em;
+      
+ 
+
+}
+
+.mini-details p{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.create-btn{
+    background-color: #13c56b;
+    color:#fff;
+  position: fixed;                
+  bottom: 2rem;                   
+  right: 5rem;  
+    padding: 0.7rem 1.2rem;
+  font-size: 1.4rem;
+  border-radius: 2rem;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  width: 3rem;
+ z-index: 1;
+}
+
+.create-btn:hover{
+    background-color: #10a75b;
+}
