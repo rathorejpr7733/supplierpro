@@ -1,0 +1,188 @@
+<app-header></app-header>
+
+<div class="container-fluid">
+      <div class="mini-details">
+        <h4>UPLIFT NOTE</h4>
+        <P>Uplift Note</P>
+    </div>
+ 
+    
+    
+<div class="container">
+   
+
+<div class="recordsearch">
+
+    <div class="selectrecord">
+
+<select class="form-select form-select-sm" aria-label=".form-select-sm example">
+  <option selected>Choose Type</option>
+  <option value="1">Code</option>
+  <option value="2">Last Delivery</option>
+  <option value="3">Last Sell</option>
+</select>
+</div>
+
+
+<div class="custom-search">
+  <i class="fa fa-search search-icon"></i>
+  <input type="text" class="form-control" id="cus-email-input" placeholder="Search for customer, email, status or something...">
+</div>
+
+
+    <div class="selectrecord2">
+
+<select class="form-select form-select2 form-select-sm" aria-label=".form-select-sm example">
+  <option class="form-option" selected>Select a Customer</option>
+  <option class="form-option" value="1">Devendra</option>
+  <option class="form-option" value="2">Arvind</option>
+  <option class="form-option" value="3">Rohit</option>
+  <option class="form-option" value="3">Chetan</option>
+</select>
+</div>
+
+    <div class="selectrecord2">
+
+<select class="form-select form-select2 form-select-sm" aria-label=".form-select-sm example">
+  <option class="form-option" selected>Select a Product</option>
+  <option class="form-option" value="1">Pepsi</option>
+  <option class="form-option" value="2">Chocolate</option>
+  <option class="form-option" value="3">Milk</option>
+    <option class="form-option" value="3">Curd</option>
+</select>
+</div>
+
+
+<div class="btn-group">
+  <button class="btn btn-droplist btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Create  <!--<i class="fa-duotone fa-solid fa-angle-down fa-xs"></i>--> 
+  </button>
+  <ul class="dropdown-menu">
+   <li><a class="dropdown-item" href="#">Completed</a></li>
+      <li><a class="dropdown-item" href="#">All</a></li>
+  </ul>
+</div>
+
+
+</div>
+
+<hr style="border-top: 1px dashed ;">
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!-- Checkbox Column -->
+  <ng-container matColumnDef="select">
+    <th mat-header-cell *matHeaderCellDef>
+      <mat-checkbox (change)="$event ? toggleAllRows() : null"
+                    [checked]="selection.hasValue() && isAllSelected()"
+                    [indeterminate]="selection.hasValue() && !isAllSelected()"
+                    [aria-label]="checkboxLabel()">
+      </mat-checkbox>
+    </th>
+    <td mat-cell *matCellDef="let row">
+      <mat-checkbox (click)="$event.stopPropagation()"
+                    (change)="$event ? selection.toggle(row) : null"
+                    [checked]="selection.isSelected(row)"
+                    [aria-label]="checkboxLabel(row)">
+      </mat-checkbox>
+    </td>
+  </ng-container>
+
+  <!-- ID Column -->
+  <ng-container matColumnDef="id">
+    <th class="tableheading" mat-header-cell *matHeaderCellDef>
+      ID <i class="fa-solid fa-sort fa-2xs" style="margin-left: 4px"></i>
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+
+  <!-- Customer Column -->
+  <ng-container matColumnDef="customer">
+    <th class="tableheading" mat-header-cell *matHeaderCellDef>
+      CUSTOMER <i class="fa-solid fa-sort fa-2xs" style="margin-left: 4px"></i>
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.customer}} </td>
+  </ng-container>
+
+  <!-- Reference Column -->
+  <ng-container matColumnDef="reference">
+    <th class="tableheading" mat-header-cell *matHeaderCellDef>
+      ORDER REFERENCE <i class="fa-solid fa-sort fa-2xs" style="margin-left: 4px"></i>
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.reference}} </td>
+  </ng-container>
+
+  <!-- Creation Date Column -->
+  <ng-container matColumnDef="creation">
+    <th class="tableheading" mat-header-cell *matHeaderCellDef>
+      CREATION DATE <i class="fa-solid fa-sort fa-2xs" style="margin-left: 4px"></i>
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.creation}} </td>
+  </ng-container>
+
+  <!-- Created By Column -->
+  <ng-container matColumnDef="created">
+    <th class="tableheading" mat-header-cell *matHeaderCellDef>
+      CREATED BY <i class="fa-solid fa-sort fa-2xs" style="margin-left: 4px"></i>
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.created}} </td>
+  </ng-container>
+
+  <!-- Shipping Date Column -->
+  <ng-container matColumnDef="shipping">
+    <th class="tableheading" mat-header-cell *matHeaderCellDef>
+      SHIPPING DATE <i class="fa-solid fa-sort fa-2xs" style="margin-left: 4px"></i>
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.shipping}} </td>
+  </ng-container>
+
+  <!-- Action Column -->
+  <ng-container matColumnDef="action">
+    <th class="tableheading" mat-header-cell *matHeaderCellDef>
+      ACTION <i class="fa-solid fa-sort fa-2xs" style="margin-left: 4px"></i>
+    </th>
+    <td mat-cell *matCellDef="let element">
+      <i class="fa-solid fa-eye fa-xs" style="color: #343a40ae; margin-right: 8px;" title="View"></i>
+      <i class="fa-solid fa-pen fa-xs" style="color: #343a40ae; margin-right: 8px;" title="Edit"></i>
+      <i class="fa-solid fa-trash fa-xs" style="color: #343a40ae;" title="Delete"></i>
+    </td>
+  </ng-container>
+
+  <!-- Table Rows -->
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+      (click)="selection.toggle(row)">
+  </tr>
+</table>
+
+
+<nav class="pagination-nav" aria-label="...">
+  <ul class="pagination">
+    <li class="page-item disabled">
+      <a class="page-link"  style=" border-radius: 4px;" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+    </li> 
+    <li class="page-item">
+      <a class="page-link" style=" border-radius: 4px; color: #6691E7;" href="#">1</a></li>
+
+    <li class="page-item"  aria-current="page">
+      <a class="page-link" style="  border-radius: 4px; background-color:#6691E7; color: #fff;" href="#">2</a>
+    </li>
+
+    <li class="page-item">
+      <a class="page-link" style=" border-radius: 4px; color: #6691E7;" href="#">Next</a>
+    </li>
+  </ul>
+</nav>
+
+</div>
+
+
+   <div _ngcontent-ng-c2943607532="" 
+    routerlink=""
+     class="create-btn btn-rounded shadow-lg  btn-icon btn-lg p-2" tabindex="0">
+     <i class="fa-solid fa-plus"></i></div>
+
+     
+
+
+</div>

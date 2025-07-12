@@ -1,0 +1,149 @@
+<app-header></app-header>
+
+<div class="container-fluid">
+      <div class="mini-details">
+        <h4>SALE LEDGER</h4>
+        <P>Sale Ledger</P>
+    </div>
+ 
+
+<div class="container">
+
+    <div class="card-header border-0">
+  <div class="d-flex align-items-center">
+    <div class="flex-shrink-0">
+      <div class="d-flex gap-2">
+        
+        <!-- From Date -->
+        <div class="input-group">
+          <span class="input-group-text">From</span>
+          <input type="date" id="start-date" name="start-date" class="form-control">
+        </div>
+
+        <!-- To Date -->
+        <div class="input-group">
+          <span class="input-group-text">To</span>
+          <input type="date" id="end-date" name="end-date" class="form-control">
+        </div>
+
+        <!-- Apply Button -->
+        <button type="button" class="apply-btn">Apply</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr style="border-top: 1px dashed ;">
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!-- Checkbox Column -->
+  <ng-container matColumnDef="select">
+    <th mat-header-cell *matHeaderCellDef>
+      <mat-checkbox (change)="$event ? toggleAllRows() : null"
+                    [checked]="selection.hasValue() && isAllSelected()"
+                    [indeterminate]="selection.hasValue() && !isAllSelected()"
+                    [aria-label]="checkboxLabel()">
+      </mat-checkbox>
+    </th>
+    <td mat-cell *matCellDef="let row">
+      <mat-checkbox (click)="$event.stopPropagation()"
+                    (change)="$event ? selection.toggle(row) : null"
+                    [checked]="selection.isSelected(row)"
+                    [aria-label]="checkboxLabel(row)">
+      </mat-checkbox>
+    </td>
+  </ng-container>
+
+  <!-- Code Column -->
+  <ng-container matColumnDef="date">
+    <th class="tableheading" mat-header-cell *matHeaderCellDef>
+      DOC DATE <i class="fa-solid fa-sort fa-2xs" style="margin-left: 4px"></i>
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+  </ng-container>
+
+  <!-- Size Column -->
+  <ng-container matColumnDef="tp">
+    <th class="tableheading" mat-header-cell *matHeaderCellDef>
+      TP <i class="fa-solid fa-sort fa-2xs" style="margin-left: 4px"></i>
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.tp}} </td>
+  </ng-container>
+
+  <!-- Barcode Column -->
+  <ng-container matColumnDef="reference">
+    <th class="tableheading" mat-header-cell *matHeaderCellDef>
+      REFERENCE <i class="fa-solid fa-sort fa-2xs" style="margin-left: 4px"></i>
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.reference}} </td>
+  </ng-container>
+
+  <!-- Description Column -->
+  <ng-container matColumnDef="details">
+    <th class="tableheading" mat-header-cell *matHeaderCellDef>
+      DETAILS <i class="fa-solid fa-sort fa-2xs" style="margin-left: 4px"></i>
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.details}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="value">
+    <th class="tableheading" mat-header-cell *matHeaderCellDef>
+      VALUE <i class="fa-solid fa-sort fa-2xs" style="margin-left: 4px"></i>
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.value}} </td>
+  </ng-container>
+
+    <ng-container matColumnDef="balance">
+    <th class="tableheading" mat-header-cell *matHeaderCellDef>
+      BALANCE <i class="fa-solid fa-sort fa-2xs" style="margin-left: 4px"></i>
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.balance}} </td>
+  </ng-container>
+
+    <ng-container matColumnDef="cumbalance">
+    <th class="tableheading" mat-header-cell *matHeaderCellDef>
+      CUM BALANCE <i class="fa-solid fa-sort fa-2xs" style="margin-left: 4px"></i>
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.cumbalance}} </td>
+  </ng-container>
+
+  <!-- Action Column -->
+  <ng-container matColumnDef="action">
+    <th class="tableheading" mat-header-cell *matHeaderCellDef> ACTION </th>
+    <td mat-cell *matCellDef="let element">
+      <i class="fa-solid fa-eye fa-xs" style="color: #343a40ae; margin-right: 8px;" title="View"></i>
+      <i class="fa-solid fa-pen fa-xs" style="color: #343a40ae; margin-right: 8px;" title="Edit"></i>
+      <i class="fa-solid fa-trash fa-xs" style="color: #343a40ae;" title="Delete"></i>
+    </td>
+  </ng-container>
+
+  <!-- Table Rows -->
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+      (click)="selection.toggle(row)">
+  </tr>
+</table>
+
+
+<nav class="pagination-nav" aria-label="...">
+  <ul class="pagination">
+    <li class="page-item disabled">
+      <a class="page-link"  style=" border-radius: 4px;" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+    </li> 
+    <li class="page-item">
+      <a class="page-link" style=" border-radius: 4px; color: #6691E7;" href="#">1</a></li>
+
+    <li class="page-item"  aria-current="page">
+      <a class="page-link" style="  border-radius: 4px; background-color:#6691E7; color: #fff;" href="#">2</a>
+    </li>
+
+    <li class="page-item">
+      <a class="page-link" style=" border-radius: 4px; color: #6691E7;" href="#">Next</a>
+    </li>
+  </ul>
+</nav>
+
+</div>
+
