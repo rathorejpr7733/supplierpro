@@ -1,0 +1,28 @@
+.container-fluid {
+  background-color: #e5ecf2;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.mini-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  padding: 1rem 2rem;
+
+  h4, p {
+    font-size: 1rem;
+    margin: 0;
+  }
+}
+
+mat-form-field {
+  background: #f8f9fa;
+  font-size: 0.9rem;
+  border-radius: 5px;
+}
+
+.mat-form-field-infix {
+  padding: 8px 0;
+}

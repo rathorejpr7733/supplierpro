@@ -1,0 +1,200 @@
+<app-header></app-header>
+
+<!-- create-sales.component.html -->
+<div class="container-fluid py-4">
+  <div class="container-fluid">
+    <div class="mini-details">
+      <h4>CREATE SALES</h4>
+      <P>Sales &nbsp;&nbsp; >&nbsp;&nbsp; Create Sales </P>
+    </div>
+
+    <div class="container">
+      <h6>Create &nbsp;New &nbsp;Sales &nbsp;Order</h6>
+
+      <div
+        _ngcontent-ng-c1615520860=""
+        id="custom-progress-bar"
+        class="progress-nav mb-4"
+      >
+        <div _ngcontent-ng-c1615520860="" class="progress" style=" background-color:  #f4f3f3c7; height: 2px" >
+          <div
+            _ngcontent-ng-c1615520860=""
+            role="progressbar"
+            aria-valuenow="0"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            class="progress-bar"
+            style="width: 0%"
+          ></div>
+        </div>
+      
+    <ul class="navbtns">
+  <li class="btnlist"><button class="step-btn" (click)="setStep(1)" [class.active]="activeStep === 1">1</button></li>
+  <li class="btnlist"><button class="step-btn" (click)="setStep(2)" [class.active]="activeStep === 2">2</button></li>
+  <li class="btnlist"><button class="step-btn" (click)="setStep(3)" [class.active]="activeStep === 3">3</button></li>
+</ul>
+
+      </div>
+
+      <div class="container mt-4">
+        <div class="mb-3">
+          <label for="supplier" class="form-label" style="font-weight: 500"
+            >Supplier</label
+          >
+          <input
+            type="text"
+            id="supplier"
+            class="form-control"
+            placeholder="Enter customer name"
+          />
+        </div>
+
+        <div class="row">
+          <!-- Invoice Address -->
+          <div class="col-md-5">
+            <label
+              for="invoiceSelect"
+              class="form-label text-uppercase text-muted fw-semibold"
+              >Invoice Address</label
+            >
+            <select id="invoiceSelect" class="form-select mb-2">
+              <option selected>Co Abingdon Storage</option>
+            </select>
+            <div class="border rounded p-2 small">
+              <div>Co Abingdon Storage</div>
+              <div class="address"><b>Add1</b> C/O Transpotify Ltd</div>
+              <div class="address"><b>Add2</b> Unit 8-10</div>
+              <div class="address"><b>Add3</b> Eyston Way</div>
+              <div class="address"><b>Add4</b> Abingdon</div>
+              <div class="address"><b>Post</b> OX14 1TR</div>
+              <div class="address"><b>Country</b> UK</div>
+            </div>
+          </div>
+
+          <!-- Delivery Address -->
+          <div class="col-md-5">
+            <label
+              for="deliverySelect"
+              class="form-label text-uppercase text-muted fw-semibold"
+              >Delivery Address</label
+            >
+            <select id="deliverySelect" class="form-select mb-2">
+              <option selected>Co Abingdon Storage</option>
+            </select>
+            <div class="border rounded p-2 small">
+              <div>Co Abingdon Storage</div>
+              <div class="address"><b>Add1</b> C/O Transpotify Ltd</div>
+              <div class="address"><b>Add2</b> Unit 8-10</div>
+              <div class="address"><b>Add3</b> Eyston Way</div>
+              <div class="address"><b>Add4</b> Abingdon</div>
+              <div class="address"><b>Post</b> OX14 1TR</div>
+              <div class="address"><b>Country</b> UK</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Checkbox -->
+        <div class="form-check mt-2">
+          <input type="checkbox" class="form-check-input" id="sameAddress" />
+          <label class="form-check-label" for="sameAddress">
+            Will your Billing and Shipping address be the same?
+          </label>
+        </div>
+      </div>
+
+      <hr style="padding: 2px" />
+
+      <div class="container mt-4">
+        <div class="row g-3">
+          <!-- Supplier Ref -->
+          <div class="col-md-4">
+            <label class="form-label">Supplier Ref</label>
+            <input
+              type="text"
+              class="form-control readonly-box"
+              value="#VL25000355"
+              readonly
+            />
+          </div>
+
+          <!-- Exp Date -->
+          <div class="col-md-4">
+            <label class="form-label">Exp Date</label>
+            <input
+              type="text"
+              class="form-control readonly-box"
+              value="07/16/2025"
+              readonly
+            />
+          </div>
+
+          <!-- Carrier -->
+          <div class="col-md-4">
+            <label class="form-label">Carrier</label>
+            <input
+              type="text"
+              class="form-control readonly-box"
+              placeholder="Carrier"
+              readonly
+            />
+          </div>
+
+          <!-- Country -->
+          <div class="col-md-4">
+            <label class="form-label ">Country</label>
+            <select class="form-select readonly-box">
+              <option>Select Country</option>
+            </select>
+          </div>
+
+          <!-- Currency -->
+          <div class="col-md-4">
+            <label class="form-label ">Currency</label>
+            <select class="form-select readonly-box">
+              <option>Select Currency</option>
+            </select>
+          </div>
+
+          <!-- VAT Radio -->
+          <div class="col-md-4">
+            <label class="form-label  d-block">VAT</label>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="vat"
+                id="vatYes"
+                checked
+              />
+              <label class="form-check-label" for="vatYes">Yes</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="vat"
+                id="vatNo"
+              />
+              <label class="form-check-label" for="vatNo">No</label>
+            </div>
+          </div>
+
+          <!-- Notes -->
+          <div class="col-12">
+            <label class="form-label ">Optional Printed Notes</label>
+            <textarea rows="2" class="form-control readonly-box"></textarea>
+          </div>
+        </div>
+
+        <!-- Button -->
+        <div class="d-flex justify-content-end mt-4">
+          <button class="next-btn" (click)="goToSalesOrder()">
+            <span class="text">Next</span> &nbsp;
+            <span class="mdi mdi-arrow-right"></span>
+          </button>
+        </div>
+        <br />
+      </div>
+    </div>
+  </div>
+</div>

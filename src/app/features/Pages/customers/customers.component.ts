@@ -4,6 +4,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { SelectionModel } from '@angular/cdk/collections';
 import { HeaderComponent } from '../../../layout/header/header.component';
+import { Router } from '@angular/router';
 
 export interface CustomerElement {
   id: string;
@@ -73,6 +74,14 @@ export class CustomersComponent {
     'contact',
     'action'
   ];
+
+    constructor(private router: Router) {}
+
+        navigateToCreatecustomer() {
+    this.router.navigate(['/createcustomer']);
+  }
+
+
 
   dataSource = CUSTOMER_DATA;
   selection = new SelectionModel<CustomerElement>(true, []);

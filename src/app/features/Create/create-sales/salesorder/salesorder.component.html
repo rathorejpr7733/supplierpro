@@ -1,0 +1,135 @@
+<app-header></app-header>
+
+<!-- create-sales.component.html -->
+<div class="container-fluid py-4">
+  <div class="container-fluid">
+    <div class="mini-details">
+      <h4>CREATE SALES</h4>
+      <P>Sales &nbsp;&nbsp; >&nbsp;&nbsp; Create Sales </P>
+    </div>
+
+    <div class="container">
+      <h6>Create &nbsp;New &nbsp;Sales &nbsp;Order</h6>
+
+      <div
+        _ngcontent-ng-c1615520860=""
+        id="custom-progress-bar"
+        class="progress-nav mb-4"
+      >
+        <div _ngcontent-ng-c1615520860="" class="progress" style=" background-color:  #f4f3f3c7; height: 2px" >
+          <div
+            _ngcontent-ng-c1615520860=""
+            role="progressbar"
+            aria-valuenow="0"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            class="progress-bar"
+            style="width: 0%"
+          ></div>
+        </div>
+      
+    <ul class="navbtns">
+  <li class="btnlist"><button class="step-btn" (click)="setStep(1)" [class.active]="activeStep === 1">1</button></li>
+  <li class="btnlist"><button class="step-btn" (click)="setStep(2)" [class.active]="activeStep === 2">2</button></li>
+  <li class="btnlist"><button class="step-btn" (click)="setStep(3)" [class.active]="activeStep === 3">3</button></li>
+</ul>
+   </div>
+
+  
+      <!-- Header Row -->
+      <div class="row border-bottom pb-2 mb-3 fw-semibold text-muted">
+        <div class="col-auto">#</div>
+        <div class="col">Product</div>
+        <div class="col">Size</div>
+        <div class="col">Qty</div>
+        <div class="col">Price(£)</div>
+        <div class="col">Value</div>
+        <div class="col">Cost</div>
+        <div class="col-auto"></div>
+      </div>
+
+      <!-- Product Rows -->
+      <div class="row align-items-center mb-2" *ngFor="let item of productList; let i = index">
+        <div class="col-auto">{{ i + 1 }}</div>
+
+        <div class="col">
+          <input matInput placeholder="Enter product name" class="form-control" [(ngModel)]="item.product" />
+        </div>
+
+        <div class="col">
+          <input matInput type="number" class="form-control bg-light" [(ngModel)]="item.size" />
+        </div>
+
+        <div class="col d-flex align-items-center">
+          <button mat-mini-button class="btn btn-outline-secondary px-2 py-1" (click)="decrementQty(i)">−</button>
+          <span class="mx-2">{{ item.qty }}</span>
+          <button mat-mini-button class="btn btn-outline-secondary px-2 py-1" (click)="incrementQty(i)">+</button>
+        </div>
+
+        <div class="col">
+          <input matInput class="form-control bg-light" [(ngModel)]="item.price" readonly />
+        </div>
+
+        <div class="col">
+          <input matInput class="form-control bg-light" [value]="calculateValue(item)" readonly />
+        </div>
+
+        <div class="col">
+          <input matInput class="form-control bg-light" [(ngModel)]="item.cost" readonly />
+        </div>
+
+        <div class="col-auto">
+          <button mat-icon-button color="warn" (click)="removeItem(i)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </div>
+
+   <button class="addbtn"><span class="mdi mdi-plus"></span></button>
+
+   <hr>
+
+<!-- Totals Section Styled Like Screenshot -->
+<div class="mt-4">
+  <div class="row justify-content-end tot">
+    <div class="col-auto text-end">
+
+      <div class="">Tot NET</div>
+      <div>{{ totalNet | currency:'USD' }}</div>
+    </div>
+    <div class="col-auto text-end">
+      <div class="">Tot VAT</div>
+      <div>{{ totalVAT | currency:'USD' }}</div>
+    </div>
+    <div class="col-auto text-end">
+      <div class="">Tot VALUE</div>
+      <div>{{ totalValue | currency:'USD' }}</div>
+    </div>
+    <div class="col-auto text-end">
+      <div class="">PROFIT</div>
+      <div>{{ profit | currency:'USD' }}</div>
+    </div>
+  </div>
+
+  <hr style="width: 20rem; margin-left: 48rem;">
+
+  <div class="row  justify-content-end mt-2 " >
+    <div class="col-auto  text-end totalkilos">
+      <div class="fw-semibold ">Tot KILOS</div>
+      <div class="totalvalue bg-light rounded fw-semibold">
+        {{ totalKilos | number: '1.2-2' }}
+      </div>
+    </div>
+  </div>
+</div><br>
+
+      <div class="next-btn-wrapper">
+       <button class="next-btn" (click)="goToSalesOrder()">
+            <span class="text">Next</span> &nbsp;
+            <span class="mdi mdi-arrow-right"></span>
+          </button>
+          </div>
+
+    </div>
+  </div>
+

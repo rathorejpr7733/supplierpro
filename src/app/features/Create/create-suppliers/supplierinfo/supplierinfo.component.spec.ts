@@ -1,0 +1,23 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { SupplierinfoComponent } from './supplierinfo.component';
+
+describe('SupplierinfoComponent', () => {
+  let component: SupplierinfoComponent;
+  let fixture: ComponentFixture<SupplierinfoComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [SupplierinfoComponent]
+    })
+    .compileComponents();
+
+    fixture = TestBed.createComponent(SupplierinfoComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

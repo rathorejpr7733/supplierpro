@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 import { MatTableModule } from '@angular/material/table';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { SelectionModel } from '@angular/cdk/collections';
+import { HeaderComponent } from "../../../layout/header/header.component";
+import { Router } from '@angular/router';
+
 
 
 
@@ -57,8 +60,8 @@ const ELEMENT_DATA: ProductElement[] = [
     CommonModule,
     MatTableModule,
     MatCheckboxModule,
- 
-  ]
+    HeaderComponent
+]
 })
 export class ProductsComponent {
   displayedColumns: string[] = [
@@ -71,6 +74,13 @@ export class ProductsComponent {
     'lastSell',
     'action'
   ];
+
+      constructor(private router: Router) {}
+
+       navigateToCreateproduct() {
+    this.router.navigate(['/createproduct']);
+  }
+
 
   dataSource = ELEMENT_DATA;
   selection = new SelectionModel<ProductElement>(true, []);

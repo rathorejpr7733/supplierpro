@@ -87,23 +87,25 @@
         <button
           id="btnGroupDrop1"
           type="button"
-          class=" btn2 "
+          class=" btn2"
+          (click)="setActive('sales')"
+             [ngClass]="activeBtn === 'sales' ? 'active-btn' : ''"
           data-bs-toggle="dropdown"
           aria-expanded="false"
-        > <i class="mdi mdi-speedometer" style="font-size: 18px; color: #6c757d; margin-right: 4px;"></i>
-
+        > <a routerLink="/sales" style="text-decoration: none; color: inherit;"> <i class="mdi mdi-speedometer"  style="font-size: 18px; margin-right: 4px;" ></i>
+          
            Sales
-          <span style="margin-left: 4px;"><i class="fa-solid fa-chevron-down fa-2xs"></i></span>
-
+          <span  class="navitems" style="margin-left: 4px;"><i class="fa-solid fa-chevron-down fa-2xs" routerLink="/sales"></i></span>
+          </a>
         </button>
         <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-          <li><a class="dropdown-item" href="#">Sales Order</a></li>
-          <li><a class="dropdown-item" href="#">Credit Notes</a></li>
-          <li><a class="dropdown-item" href="#">Pro forma</a></li>
-          <li><a class="dropdown-item" href="#">Uplift Notes</a></li>
-          <li><a class="dropdown-item" href="#">Return Notes</a></li>
-          <li><a class="dropdown-item" href="#">Sale Notes</a></li>
-          <li><a class="dropdown-item" href="#">Sale Invoicesr</a></li>
+          <li><a class="dropdown-item" routerLink="/sales" >Sales Order</a></li>
+          <li><a class="dropdown-item" routerLink="/credit-notes" >Credit Notes</a></li>
+          <li><a class="dropdown-item" routerLink="/proforma">Pro forma</a></li>
+          <li><a class="dropdown-item" routerLink="/uplift-notes">Uplift Notes</a></li>
+          <li><a class="dropdown-item" routerLink="/return-notes">Return Notes</a></li>
+          <li><a class="dropdown-item" routerLink="/sales-notes">Sale Notes</a></li>
+          <li><a class="dropdown-item" routerLink="/sale-invoicesr">Sale Invoicesr</a></li>
          
           
         </ul>
@@ -114,14 +116,18 @@
           id="btnGroupDrop1"
           type="button"
           class=" btn2 "
+           (click)="setActive('purchase')"
+           [ngClass]="activeBtn === 'purchase' ? 'active-btn' : ''"
           data-bs-toggle="dropdown"
           aria-expanded="false">
-          <i class="mdi mdi-speedometer" style="font-size: 18px; color: #6c757d; margin-right: 4px;"></i>
+          <a routerLink="/purchase" style="text-decoration: none; color: inherit;">
+          <i class="mdi mdi-speedometer" style="font-size: 18px;  margin-right: 4px;"></i>
           Purchase
            <span style="margin-left: 4px;"><i class="fa-solid fa-chevron-down fa-2xs"></i> </span>
+       </a>
         </button>
         <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-          <li><a class="dropdown-item" href="#">Purchase Order</a></li>
+          <li><a class="dropdown-item" routerLink="/purchase">Purchase Order</a></li>
         
          
           
@@ -133,18 +139,22 @@
           id="btnGroupDrop1"
           type="button"
           class=" btn2 "
+               (click)="setActive('Products')"
+           [ngClass]="activeBtn === 'Products' ? 'active-btn' : ''"
           data-bs-toggle="dropdown"
           aria-expanded="false"
         >
-        <span class="mdi mdi-view-carousel-outline" style="font-size: 18px; color: #6c757d; margin-right: 4px;"></span>
+        <a routerLink="/products" style="text-decoration: none; color: inherit;">
+        <span class="mdi mdi-view-carousel-outline" style="font-size: 18px;  margin-right: 4px;"></span>
         Products/Inventory
          <span style="margin-left: 4px;"><i class="fa-solid fa-chevron-down fa-2xs" ></i> </span>
+         </a>
         </button>
         <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-          <li><a class="dropdown-item" href="#">Products</a></li>
-          <li><a class="dropdown-item" href="#">Groups</a></li>
-          <li><a class="dropdown-item" href="#">Stock Adjustments</a></li>
-          <li><a class="dropdown-item" href="#">Goods ln</a></li>
+          <li><a class="dropdown-item" routerLink="/products">Products</a></li>
+          <li><a class="dropdown-item" routerLink="/goods-in">Groups</a></li>
+          <li><a class="dropdown-item" routerLink="/groups">Stock Adjustments</a></li>
+          <li><a class="dropdown-item" routerLink="/stock">Goods ln</a></li>
 
         </ul>
       </div>
@@ -154,14 +164,19 @@
           id="btnGroupDrop1"
           type="button"
           class=" btn2 "
+               (click)="setActive('Customers')"
+           [ngClass]="activeBtn === 'Customers' ? 'active-btn' : ''"
           data-bs-toggle="dropdown"
           aria-expanded="false"
-        ><span class="mdi mdi-view-carousel-outline" style="font-size: 18px; color: #6c757d; margin-right: 4px;"></span>
+        >
+         <a routerLink="/customers" style="text-decoration: none; color: inherit;">
+        <span class="mdi mdi-view-carousel-outline" style="font-size: 18px;  margin-right: 4px;"></span>
         Customers
          <span style="margin-left: 4px;"><i class="fa-solid fa-chevron-down fa-2xs"></i> </span>
-        </button>
+       </a>
+      </button>
         <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-          <li><a class="dropdown-item" href="#">Customers</a></li>
+          <li><a class="dropdown-item" routerLink="/customers">Customers</a></li>
 
         </ul>
       </div>
@@ -172,13 +187,17 @@
           id="btnGroupDrop1"
           type="button"
           class=" btn2 "
+            (click)="setActive('Suppliers')"
+           [ngClass]="activeBtn === 'Suppliers' ? 'active-btn' : ''"
           data-bs-toggle="dropdown"
           aria-expanded="false" >
-          <span class="mdi mdi-view-carousel-outline" style="font-size: 18px; color: #6c757d; margin-right: 4px;"></span>
+           <a routerLink="/suppliers" style="text-decoration: none; color: inherit;">
+          <span class="mdi mdi-view-carousel-outline" style="font-size: 18px; margin-right: 4px;"></span>
         Suppliers <span style="margin-left: 4px;"><i class="fa-solid fa-chevron-down fa-2xs"></i> </span>
+        </a>
         </button>
         <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-          <li><a class="dropdown-item" href="#">Suppliers</a></li>
+          <li><a class="dropdown-item" routerLink="/suppliers">Suppliers</a></li>
 
         </ul>
       </div>
@@ -189,15 +208,19 @@
           id="btnGroupDrop1"
           type="button"
           class=" btn2 "
+                 (click)="setActive('Reports')"
+           [ngClass]="activeBtn === 'Reports' ? 'active-btn' : ''"
           data-bs-toggle="dropdown"
           aria-expanded="false">
-          <span class="mdi mdi-view-carousel-outline" style="font-size: 18px; color: #6c757d; margin-right: 4px;"></span>
+           <a routerLink="/reports" style="text-decoration: none; color: inherit;">
+          <span class="mdi mdi-view-carousel-outline" style="font-size: 18px; margin-right: 4px;"></span>
           Reports
            <span style="margin-left: 4px;"><i class="fa-solid fa-chevron-down fa-2xs"></i> </span>
+           </a>
         </button>
         <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-          <li><a class="dropdown-item" href="#">Inventory Register</a></li>
-          <li><a class="dropdown-item" href="#">Sales Ledger</a></li>
+          <li><a class="dropdown-item" routerLink="/reports">Inventory Register</a></li>
+          <li><a class="dropdown-item" routerLink="/sales-ledger">Sales Ledger</a></li>
 
          
           
@@ -210,14 +233,18 @@
           id="btnGroupDrop1"
           type="button"
           class=" btn2 "
+                 (click)="setActive('Users')"
+           [ngClass]="activeBtn === 'Users' ? 'active-btn' : ''"
           data-bs-toggle="dropdown"
           aria-expanded="false">
-          <span class="mdi mdi-view-carousel-outline" style="font-size: 18px; color: #6c757d; margin-right: 4px;"></span>
+           <a routerLink="/users" style="text-decoration: none; color: inherit;">
+          <span class="mdi mdi-view-carousel-outline" style="font-size: 18px;  margin-right: 4px;"></span>
           Users
            <span style="margin-left: 4px;"><i class="fa-solid fa-chevron-down fa-2xs"></i> </span>
+           </a>
         </button>
         <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-          <li><a class="dropdown-item" href="#">Users</a></li>
+          <li><a class="dropdown-item" routerLink="/users">Users</a></li>
           
         </ul>
       </div>

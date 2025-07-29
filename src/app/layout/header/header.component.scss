@@ -76,7 +76,7 @@
     display: flex;
     flex-direction: row;
       margin-left: -1.5rem;
-      color: #6c757d;;
+      color: #6c757d;
   
 
 }
@@ -84,9 +84,9 @@
 .btn2 {
   background-color: transparent;
   border: none;
-  color: inherit; 
   box-shadow: none;
-  
+   color: #6c757d;
+     transition: color 0.2s ease;
       padding-left: 1rem;
     padding-right: 1rem;
 }
@@ -94,4 +94,57 @@
   background-color: transparent;
   border: none;
   box-shadow: none;
+   color: #6691E7
+}
+
+.active-btn {
+  color: #6691E7 !important;
+}
+
+.active-btn i {
+  color: #6691E7 !important;
+}
+
+
+
+
+.dropdown-menu {
+  border-radius: 10px;
+  padding: 0.5rem 0;
+  box-shadow: none;
+  min-width: 180px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border: 1px solid #e9ecef;
+  transition: all 0.2s ease-in-out;
+}
+
+
+.dropdown-item {
+  color: #6c757d !important;
+  padding: 8px 16px;
+  font-size: 14px;
+  background-color: transparent !important;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+
+.dropdown-item:hover {
+  color: #6691E7 !important;
+  background-color: transparent !important;
+}
+
+
+.dropdown-item:focus,
+.dropdown-item:active {
+  background-color: transparent !important;
+  color: #6691E7 !important;
+  outline: none;
+}
+
+
+.btn-group:hover .dropdown-menu {
+  display: block;
+  margin-top: 2.7em;
+  border-radius: 10px;
 }

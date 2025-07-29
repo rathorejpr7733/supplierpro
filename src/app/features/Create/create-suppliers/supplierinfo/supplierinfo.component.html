@@ -1,0 +1,192 @@
+<app-header></app-header>
+
+<div class="container-fluid py-4">
+  
+  <div class="container-fluid">
+    <div class="mini-details d-flex justify-content-between px-5">
+      <h4>CREATE SALES</h4>
+      <p>Sales &nbsp;&nbsp; > &nbsp;&nbsp; Create Sales</p>
+    </div>
+    
+
+    <div class="container bg-white rounded">
+      <!-- Progress Navigation -->
+      <div id="custom-progress-bar" class="progress-nav mb-4">
+        <div class="progress" style="background-color: #f4f3f3c7; height: 2px">
+          <div
+            role="progressbar"
+            aria-valuenow="0"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            class="progress-bar"
+            style="width: 0%"
+          ></div>
+        </div>
+
+        <ul class="navbtns">
+          <li class="btnlist">
+            <button
+              class="step-btn"
+              (click)="setStep(1)"
+              [class.active]="activeStep === 1"
+            >
+              1
+            </button>
+          </li>
+          <li class="btnlist">
+            <button
+              class="step-btn"
+              (click)="setStep(2)"
+              [class.active]="activeStep === 2"
+            >
+              2
+            </button>
+          </li>
+          <li class="btnlist">
+            <button
+              class="step-btn"
+              (click)="setStep(3)"
+              [class.active]="activeStep === 3"
+            >
+              3
+            </button>
+          </li>
+          <li class="btnlist">
+            <button
+              class="step-btn"
+              (click)="setStep(4)"
+              [class.active]="activeStep === 4"
+            >
+              4
+            </button>
+          </li>
+
+              <li class="btnlist">
+            <button
+              class="step-btn"
+              (click)="setStep(5)"
+              [class.active]="activeStep === 5"
+            >
+              5
+            </button>
+          </li>
+
+              <li class="btnlist">
+            <button
+              class="step-btn"
+              (click)="setStep(6)"
+              [class.active]="activeStep === 6"
+            >
+              6
+            </button>
+          </li>
+
+        </ul>
+                
+     
+      </div>
+
+      <!-- General Information Section -->
+      <div class="pagedetail">
+        <h4>General Information</h4>
+        <p>Fill all Information as below</p>
+      </div>
+
+      <div class="container mt-4">
+
+         <div class="row g-3">
+          <!-- ID -->
+          <div class="col-md-4">
+            <label class="form-label">ID</label>  
+            <input type="text" class="form-control readonly-box" value="Enter ID" readonly /> <br>
+          </div>
+
+       
+          
+           <div class="col-md-4">
+            <label class="form-label">Company</label>
+            <input type="text" class="form-control readonly-box" value="Enter Company" readonly /> <br>
+          </div>
+
+              <div class="col-md-4">
+            <label class="form-label">Contacts</label>
+            <input type="text" class="form-control readonly-box" value="Enter Contacts" readonly /> <br>
+          </div>
+
+        </div>
+
+                    
+         <div class="row g-3">
+          <!-- ID -->
+          <div class="col-md-4">
+            <label class="form-label">Po</label>
+            <input type="text" class="form-control readonly-box" value="Enter Po" readonly /> <br>
+          </div>
+
+           <div class="col-md-4">
+            <label class="form-label">Note</label>
+            <input type="text" class="form-control readonly-box" value="Enter Note" readonly /> <br>
+          </div>
+           <div class="col-md-4">
+            <label class="form-label">Contact</label>
+            <input type="text" class="form-control readonly-box" value="Enter Contact" readonly /> <br>
+          </div>
+        </div>
+
+
+
+         <div class="row g-3">
+          <!-- ID -->
+          <div class="col-md-4">
+            <label class="form-label">Tel</label>
+            <input type="text" class="form-control readonly-box" value="Enter Tel" readonly /> <br>
+          </div>
+
+           <div class="col-md-4">
+            <label class="form-label">Fax</label>
+            <input type="text" class="form-control readonly-box" value="Enter Fax" readonly /> <br>
+          </div>
+           <div class="col-md-4">
+            <label class="form-label">Mobile</label>
+            <input type="text" class="form-control readonly-box" value="Enter Mobile" readonly /> <br>
+          </div>
+
+        </div>
+
+
+         <div class="row g-3">
+          <!-- ID -->
+
+                   <div class="col-md-4">
+            <label class="form-label">Email</label>
+            <input type="text" class="form-control readonly-box" value="Enter Email" readonly /> <br>
+          </div>
+
+               <div class="col-md-4">
+            <label class="form-label">Type</label>
+            <input type="text" class="form-control readonly-box" value="Enter Type" readonly /> <br>
+          </div>
+
+ 
+
+           <div class="col-md-4">
+            <label class="form-label">Freight</label>
+            <input type="text" class="form-control readonly-box" value="Enter Freight" readonly /> <br>
+          </div>
+   
+        </div>
+
+
+        <!-- Next Button -->
+        <div class="d-flex justify-content-end mt-4">
+          <button class="next-btn" (click)="goToNext()">
+            <span class="text">Go to more info</span> &nbsp;
+            <span class="mdi mdi-arrow-right"></span>
+          </button>
+        </div>
+        <br />
+      </div>
+    </div>
+
+  </div>
+</div>

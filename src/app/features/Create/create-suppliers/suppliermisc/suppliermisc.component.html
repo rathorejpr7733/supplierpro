@@ -1,0 +1,161 @@
+<app-header></app-header>
+
+
+<div class="container-fluid py-4">
+  <div class="container-fluid">
+    <div class="mini-details d-flex justify-content-between px-5">
+      <h4>CREATE SUPPLIER</h4>
+      <p>Supplier &nbsp;&nbsp; > &nbsp;&nbsp; Create Supplier</p>
+    </div>
+
+    <div class="container bg-white rounded">
+      <!-- Progress Navigation -->
+      <div id="custom-progress-bar" class="progress-nav mb-4">
+        <div class="progress" style="background-color: #f4f3f3c7; height: 2px">
+          <div
+            role="progressbar"
+            aria-valuenow="0"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            class="progress-bar"
+            style="width: 0%"
+          ></div>
+        </div>
+
+        <ul class="navbtns">
+          <li class="btnlist">
+            <button
+              class="step-btn"
+              (click)="setStep(1)"
+              [class.active]="activeStep === 1"
+            >
+              1
+            </button>
+          </li>
+          <li class="btnlist">
+            <button
+              class="step-btn"
+              (click)="setStep(2)"
+              [class.active]="activeStep === 2"
+            >
+              2
+            </button>
+          </li>
+          <li class="btnlist">
+            <button
+              class="step-btn"
+              (click)="setStep(3)"
+              [class.active]="activeStep === 3"
+            >
+              3
+            </button>
+          </li>
+          <li class="btnlist">
+            <button
+              class="step-btn"
+              (click)="setStep(4)"
+              [class.active]="activeStep === 4"
+            >
+              4
+            </button>
+          </li>
+                   <li class="btnlist">
+            <button
+              class="step-btn"
+              (click)="setStep(5)"
+              [class.active]="activeStep === 5"
+            >
+              5
+            </button>
+          </li>
+
+                   <li class="btnlist">
+            <button
+              class="step-btn"
+              (click)="setStep(6)"
+              [class.active]="activeStep === 6"
+            >
+              6
+            </button>
+          </li>
+
+        </ul>
+      </div>
+
+      <!-- General Information Section -->
+      <div class="pagedetail">
+        <h4>Misc Information</h4>
+        <p>Fill all Information as below</p>
+      </div>
+
+      <div class="container2">
+        <div class="row g-3">
+          <div _ngcontent-ng-c421389144="" class="col-lg-4">
+            <label
+              _ngcontent-ng-c421389144=""
+              for="product-title-input"
+              class="form-label"
+            >
+               A/C Ref </label
+            ><input
+              _ngcontent-ng-c421389144=""
+              type="text"
+              id="date-field"
+              data-provider="flatpickr"
+              data-time="true"
+              placeholder="Enter A/C Ref"
+              class="form-control bg-light border-0 flatpickr-input"
+            />
+          </div>
+
+          <div _ngcontent-ng-c421389144="" class="col-lg-4">
+            <label
+              _ngcontent-ng-c421389144=""
+              for="vat-country-select"
+              class="form-label"
+              >Currency</label
+            ><select
+              _ngcontent-ng-c421389144=""
+              id="vat-country-select"
+              required=""
+              class="form-select"
+            >
+              <option _ngcontent-ng-c421389144="" value="" selected="">
+                Select Currency
+              </option>
+              <option _ngcontent-ng-c421389144="" value="country1">UK</option>
+              <option _ngcontent-ng-c421389144="" value="country2">
+                India
+              </option>
+              <input
+                _ngcontent-ng-c421389144=""
+                type="text"
+                id="date-field"
+                data-provider="flatpickr"
+                data-time="true"
+                placeholder="Please select a VAT country."
+                class="form-control bg-light border-0 flatpickr-input"
+              />
+            </select>
+          </div>
+
+                <div class="col-md-4">
+            <label class="form-label">VAT</label>
+            <input type="text" class="form-control readonly-box" value="Enter ID" readonly />
+          </div>
+
+
+        </div>
+
+        <!-- Next Button -->
+        <div class="d-flex justify-content-end mt-4">
+          <button class="next-btn" (click)="goToNext()">
+            <span class="text">Next</span> &nbsp;
+            <span class="mdi mdi-arrow-right"></span>
+          </button>
+        </div>
+        <br />
+      </div>
+    </div>
+  </div>
+</div>

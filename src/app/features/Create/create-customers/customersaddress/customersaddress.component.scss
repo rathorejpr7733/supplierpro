@@ -1,0 +1,166 @@
+.container-fluid{
+background-color: #e5ecf2;
+height: 140%;
+width: 100%;
+
+} 
+
+.mini-details{
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-around;
+margin: 0 -34rem;
+background-color: transparent;
+}
+
+.mini-details h4{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+      font-size: .9em;
+      margin-left: 10rem;
+
+}
+
+.mini-details p{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: .9rem;
+    margin-right: 10rem;
+}
+
+
+.container{
+background-color: #fff;
+border-radius: 4px;
+padding-top: 8rem;
+padding-left: 2rem;
+padding-right: 2rem;
+}
+
+
+.navbtns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+}
+
+.btnlist {
+  list-style: none;
+  margin-top: -1.2rem;
+  margin-left: 1.2rem;
+}
+
+.step-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: #f4f3f3c7;
+  color: #577bc4;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.step-btn:hover {
+  background-color: #577bc4;
+  color: white;
+}
+
+.step-btn.active {
+  background-color: #577bc4;
+  color: white;
+}
+
+
+.pagedetail{
+    margin-bottom: -4rem;
+    padding-left: 2rem;
+}
+.pagedetail h4 {
+    font-size: large;    
+}
+
+
+.pagedetail p {
+    font-size: small;
+    color: #878a99;    
+}
+
+
+.container2{
+  margin-top: 4rem;
+  margin-left: 2rem;
+}
+
+.form-label {
+  font-size: 14px;
+}
+
+select.form-select {
+  background-color: #f8f9fa;
+}
+
+.border.rounded.p-2 {
+  background-color: #fff;
+  font-size: 13px;
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.demo-inline-calendar-card {
+  padding: 12px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.address{
+    margin-top: 2px;
+}
+
+
+.readonly-box {
+  background-color: #f5f8fa; // light blue-gray
+  border: 1px solid #edf1f5;
+  color: #495057;
+  font-size: 14px;
+}
+
+.form-label {
+  font-size: 14px;
+}
+
+.next-btn {
+  background: linear-gradient(to right, #11b563 60%, #13c36b 40%);
+  color: white;
+  border: none;
+  transition: background-color 0.3s ease;
+
+  font-weight: 500;
+  font-size: 14px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+
+.next-btn:hover {
+ 
+    background: linear-gradient(to right, #0f9e56 60%, #0e9450 40%);
+}
+
+
+#vatYes:checked{
+     background-color:#6691E7;
+}
+
+#vatNo:checked{
+    background-color:#6691E7;
+}

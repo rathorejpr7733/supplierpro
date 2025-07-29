@@ -4,6 +4,12 @@ import { CommonModule } from '@angular/common';
 import { MatTableModule } from '@angular/material/table';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { SelectionModel } from '@angular/cdk/collections';
+import { Router } from '@angular/router'; 
+
+
+
+
+
 
 export interface SalesElement  {
       id:string;
@@ -51,7 +57,8 @@ export interface SalesElement  {
   standalone:true,
   imports: [HeaderComponent,
      MatTableModule,
-    MatCheckboxModule,],
+    MatCheckboxModule,
+  ],
   templateUrl: './sales.component.html',
   styleUrl: './sales.component.scss'
 })
@@ -73,6 +80,8 @@ export class SalesComponent {
     dataSource = ELEMENT_DATA;
    selection = new SelectionModel<SalesElement>(true, []);
 
+
+    constructor(private router: Router) {}
   
     isAllSelected() {
       const numSelected = this.selection.selected.length;
@@ -95,6 +104,8 @@ checkboxLabel(row?: SalesElement): string {
   return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.id}`;
 }
 
-  
+    navigateToCreateSales() {
+    this.router.navigate(['/salesaddress']);
+  }
 
 }

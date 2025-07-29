@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { MatTableModule } from '@angular/material/table';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { SelectionModel } from '@angular/cdk/collections';
+import { Router } from '@angular/router';
 
 
 export interface PurchaseElement  {
@@ -72,6 +73,12 @@ export class PurchaseComponent {
   'action'
     ];
   
+      constructor (private router : Router) {}
+ 
+  navigateToPurchaseAddress(){
+this.router.navigate(['/purchaseaddress']);
+}
+
     dataSource = ELEMENT_DATA;
    selection = new SelectionModel<PurchaseElement>(true, []);
 
@@ -97,6 +104,5 @@ checkboxLabel(row?: PurchaseElement): string {
   return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.id}`;
 }
 
-  
 
 }

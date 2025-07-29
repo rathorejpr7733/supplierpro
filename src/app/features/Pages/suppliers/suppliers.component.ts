@@ -4,6 +4,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { SelectionModel } from '@angular/cdk/collections';
 import { HeaderComponent } from '../../../layout/header/header.component';
+import { Router } from '@angular/router';
 
 export interface SuppliersElement {
   id: string;
@@ -84,6 +85,10 @@ export class SuppliersComponent {
     'action'
   ];
 
+  
+    constructor(private router: Router) {}
+
+    
   dataSource = SUPPLIER_DATA;
   selection = new SelectionModel<SuppliersElement>(true, []);
 
@@ -107,4 +112,12 @@ export class SuppliersComponent {
     }
     return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.id}`;
   }
+
+
+        navigateToCreatecustomer() {
+    this.router.navigate(['/supplierinfo']);
+  }
+
+
+
 }

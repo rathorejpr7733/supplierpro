@@ -1,0 +1,124 @@
+<app-header></app-header>
+
+<div class="container-fluid py-4 bg-light-blue">
+  <div class="container-fluid">
+    <div class="mini-details d-flex justify-content-between px-5">
+      <h4>CREATE PRODUCT</h4>
+      <p>Product &nbsp;&nbsp; > &nbsp;&nbsp; Create Product</p>
+    </div>
+
+    <div class="container-fluid p-4 bg-white border rounded shadow-sm">
+      <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+        <div class="row g-4">
+          <!-- Column 1 -->
+          <div class="col-md-4" *ngFor="let group of [0, 1, 2]; let i = index">
+            <ng-container [ngSwitch]="i">
+              <!-- First column -->
+              <div *ngSwitchCase="0">
+                <ng-container *ngFor="let field of [
+                  { name: 'title', label: 'Product Title' },
+                  { name: 'pack', label: 'Pack' },
+                  { name: 'brand', label: 'Brand' },
+                  { name: 'weight', label: 'Weight' },
+                  { name: 'layer', label: 'Layer' },
+                  { name: 'lastSellDate', label: 'Last Sell Date', isDate: true, picker: 'sellDate' },
+                  { name: 'onSalesOrder', label: 'On Sales Order' },
+                  { name: 'onPurchaseOrder', label: 'On Purchase Order' },
+                  { name: 'description', label: 'Description' }
+                ]">
+                  <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>{{ field.label }}</mat-label>
+                    <input
+                      *ngIf="!field.isDate"
+                      matInput
+                      [formControlName]="field.name"
+                      [placeholder]="'Enter ' + field.label" />
+                    <ng-container *ngIf="field.isDate">
+                      <input matInput [matDatepicker]="sellDate" formControlName="lastSellDate" />
+                      <mat-datepicker-toggle matSuffix [for]="sellDate">
+                        <mat-icon>calendar_today</mat-icon>
+                      </mat-datepicker-toggle>
+                      <mat-datepicker #sellDate></mat-datepicker>
+                    </ng-container>
+                  </mat-form-field>
+                </ng-container>
+              </div>
+
+              <!-- Second column -->
+              <div *ngSwitchCase="1">
+                <ng-container *ngFor="let field of [
+                  { name: 'code', label: 'Code' },
+                  { name: 'size', label: 'Size' },
+                  { name: 'vatCode', label: 'VAT Code' },
+                  { name: 'cube', label: 'Cube' },
+                  { name: 'lastDeliveryDate', label: 'Last Delivery Date', isDate: true, picker: 'deliveryDate' },
+                  { name: 'freeStock', label: 'Free Stock' },
+                  { name: 'allocated', label: 'Allocated' },
+                  { name: 'costPrice', label: 'Cost Price' }
+                ]">
+                  <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>{{ field.label }}</mat-label>
+                    <input
+                      *ngIf="!field.isDate"
+                      matInput
+                      [formControlName]="field.name"
+                      [placeholder]="'Enter ' + field.label" />
+                    <ng-container *ngIf="field.isDate">
+                      <input matInput [matDatepicker]="deliveryDate" formControlName="lastDeliveryDate" />
+                      <mat-datepicker-toggle matSuffix [for]="deliveryDate">
+                        <mat-icon>calendar_today</mat-icon>
+                      </mat-datepicker-toggle>
+                      <mat-datepicker #deliveryDate></mat-datepicker>
+                    </ng-container>
+                  </mat-form-field>
+                </ng-container>
+              </div>
+
+              <!-- Third column -->
+              <div *ngSwitchCase="2">
+                <mat-form-field appearance="fill" class="w-100">
+                  <mat-label>Barcode</mat-label>
+                  <input matInput formControlName="barcode" placeholder="Enter Barcode" />
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" class="w-100">
+                  <mat-label>Group</mat-label>
+                  <mat-select formControlName="group">
+                    <mat-option value="" disabled>Select Group</mat-option>
+                    <mat-option value="Group A">Group A</mat-option>
+                    <mat-option value="Group B">Group B</mat-option>
+                  </mat-select>
+                </mat-form-field>
+
+                <div class="mb-3">
+                  <label class="form-label me-3">VAT</label>
+                  <mat-radio-group formControlName="vat" class="d-flex gap-3">
+                    <mat-radio-button value="Yes">Yes</mat-radio-button>
+                    <mat-radio-button value="No">No</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+
+                <ng-container *ngFor="let field of [
+                  { name: 'perPallet', label: 'Per Pallet' },
+                  { name: 'salesPrice', label: 'Sales Price' },
+                  { name: 'stock', label: 'Stock' },
+                  { name: 'onPerforma', label: 'On Performa' }
+                ]">
+                  <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>{{ field.label }}</mat-label>
+                    <input matInput [formControlName]="field.name" [placeholder]="'Enter ' + field.label" />
+                  </mat-form-field>
+                </ng-container>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-end gap-2 mt-4">
+          <button type="button" class="btn btn-secondary" (click)="onCancel()">Cancel</button>
+          <button type="submit" class="btn btn-success">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

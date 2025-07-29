@@ -1,0 +1,246 @@
+<app-header></app-header>
+
+<div class="container-fluid py-4">
+  <div class="container-fluid">
+    <div class="mini-details d-flex justify-content-between px-5">
+      <h4>CREATE SALES</h4>
+      <p>Sales &nbsp;&nbsp; > &nbsp;&nbsp; Create Sales</p>
+    </div>
+
+    <div class="container bg-white rounded">
+      <!-- Progress Navigation -->
+      <div id="custom-progress-bar" class="progress-nav mb-4">
+        <div class="progress" style="background-color: #f4f3f3c7; height: 2px">
+          <div
+            role="progressbar"
+            aria-valuenow="0"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            class="progress-bar"
+            style="width: 0%"
+          ></div>
+        </div>
+
+        <ul class="navbtns">
+          <li class="btnlist">
+            <button
+              class="step-btn"
+              (click)="setStep(1)"
+              [class.active]="activeStep === 1"
+            >
+              1
+            </button>
+          </li>
+          <li class="btnlist">
+            <button
+              class="step-btn"
+              (click)="setStep(2)"
+              [class.active]="activeStep === 2"
+            >
+              2
+            </button>
+          </li>
+          <li class="btnlist">
+            <button
+              class="step-btn"
+              (click)="setStep(3)"
+              [class.active]="activeStep === 3"
+            >
+              3
+            </button>
+          </li>
+          <li class="btnlist">
+            <button
+              class="step-btn"
+              (click)="setStep(4)"
+              [class.active]="activeStep === 4"
+            >
+              4
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <!-- General Information Section -->
+      <div class="pagedetail">
+        <h4>Invoice Information</h4>
+        <p>Fill all Information as below</p>
+      </div>
+
+      <div class="container mt-4">
+
+         <div class="row g-3">
+          <!-- ID -->
+          <div class="col-md-4">
+            <label class="form-label">ID</label>
+            <input type="text" class="form-control readonly-box" value="Enter ID" readonly />
+          </div>
+
+       
+          
+           <div class="col-md-4">
+            <label class="form-label">Co</label>
+            <input type="text" class="form-control readonly-box" value="Enter Co" readonly />
+          </div>
+
+              <div class="col-md-4">
+            <label class="form-label">Inco Terms</label>
+            <input type="text" class="form-control readonly-box" value="Enter Inco Terms" readonly />
+          </div>
+
+        </div>
+
+                    
+         <div class="row g-3">
+          <!-- ID -->
+          <div class="col-md-4">
+            <label class="form-label">From Hayes</label>
+            <input type="text" class="form-control readonly-box" value="Enter From Hayes" readonly />
+          </div>
+
+           <div class="col-md-4">
+            <label class="form-label">So</label>
+            <input type="text" class="form-control readonly-box" value="Enter So" readonly />
+          </div>
+           <div class="col-md-4">
+            <label class="form-label">Ic</label>
+            <input type="text" class="form-control readonly-box" value="Enter Ic" readonly />
+          </div>
+        </div>
+
+
+
+         <div class="row g-3">
+          <!-- ID -->
+          <div class="col-md-4">
+            <label class="form-label">ID</label>
+            <input type="text" class="form-control readonly-box" value="Enter ID" readonly />
+          </div>
+
+           <div class="col-md-4">
+            <label class="form-label">Lines</label>
+            <input type="text" class="form-control readonly-box" value="Enter Lines" readonly />
+          </div>
+           <div class="col-md-4">
+            <label class="form-label">Plts</label>
+            <input type="text" class="form-control readonly-box" value="Enter Plts" readonly />
+          </div>
+
+        </div>
+
+
+         <div class="row g-3">
+          <!-- ID -->
+
+                   <div class="col-md-4">
+            <label class="form-label">Job Ref</label>
+            <input type="text" class="form-control readonly-box" value="Enter Job Ref" readonly />
+          </div>
+
+               <div class="col-md-4">
+            <label class="form-label">Order Ref</label>
+            <input type="text" class="form-control readonly-box" value="Enter Order Ref" readonly />
+          </div>
+
+ 
+
+           <div class="col-md-4">
+            <label class="form-label">Kg</label>
+            <input type="text" class="form-control readonly-box" value="Enter Kg" readonly />
+          </div>
+
+      
+
+         
+
+         
+
+    
+
+
+   
+        </div>
+
+
+         <div class="row g-3">
+          <!-- ID -->
+          <div class="col-md-4">
+            <label class="form-label">Pf Date</label>
+            <input type="text" class="form-control readonly-box" value="10/12/2024" readonly />
+          </div>
+
+            <div class="col-md-4">
+            <label class="form-label">So Date</label>
+            <input type="text" class="form-control readonly-box" value="10/12/2024" readonly />
+          </div>
+
+
+              <div class="col-md-4">
+            <label class="form-label">Ic Date</label>
+            <input type="text" class="form-control readonly-box" value="11/12/2024" readonly />
+          </div>
+
+
+   
+        </div>
+
+
+         <div class="row g-3">
+          <!-- ID -->
+             <div class="col-md-4">
+            <label class="form-label">Ship Date</label>
+            <input type="text" class="form-control readonly-box" value="10/12/2024" readonly />
+          </div>
+
+
+           <div class="col-md-4">
+            <label class="form-label">Nett</label>
+            <input type="text" class="form-control readonly-box" value="Enter Nett" readonly />
+          </div>
+           <div class="col-md-4">
+            <label class="form-label">VAT</label>
+            <input type="text" class="form-control readonly-box" value="Enter ID" readonly />
+          </div>
+   
+        </div>
+
+
+         <div class="row g-3">
+          <!-- ID -->
+          <div class="col-md-4">
+            <label class="form-label">Gross</label>
+            <input type="text" class="form-control readonly-box" value="Enter Gross" readonly />
+          </div>
+
+           <div class="col-md-4">
+            <label class="form-label">Profit</label>
+            <input type="text" class="form-control readonly-box" value="Enter Profit" readonly />
+          </div>
+           <div class="col-md-4">
+            <label class="form-label">Cbm</label>
+            <input type="text" class="form-control readonly-box" value="Enter Cbm" readonly />
+          </div>
+
+         
+
+         
+
+    
+
+
+   
+        </div>
+
+        <!-- Next Button -->
+        <div class="d-flex justify-content-end mt-4">
+          <button class="next-btn" (click)="goToSubmit()">
+            <span class="text">Submit</span> &nbsp;
+            <span class="mdi mdi-arrow-right"></span>
+          </button>
+        </div>
+        <br />
+      </div>
+    </div>
+
+  </div>
+</div>
